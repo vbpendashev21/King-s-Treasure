@@ -1,9 +1,10 @@
 #include <iostream>
-using namespace std;
+#include <iomanip>
+#include <cmath>
+using namespace std; //temp namespace; it will be changed later
 
 int main()
 {
-	int n;
-	cin >> n;
-	cout << n;
+	cout << "___________" << setw(3) << "___________" << setw(5) << "___________" << setw(5) << "___________" << setw(3) << "___________" << setw(5) << "___________" << setw(3) << "________" << setw(3) << "___________";
+	cout << endl << "123" << setw(3) << "123";
 }
