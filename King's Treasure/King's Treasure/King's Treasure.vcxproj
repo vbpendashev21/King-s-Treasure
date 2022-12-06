@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{059fba90-cfe8-4f09-bb95-7d7f55dfefcb}</ProjectGuid>
+    <ProjectGuid>{4c266170-22e5-4bc7-b7e5-4eb1b0c4a646}</ProjectGuid>
     <RootNamespace>KingsTreasure</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
