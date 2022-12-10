@@ -1,3 +1,4 @@
 ﻿  King's Treasure.cpp
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(11,6): warning C4101: 'input': unreferenced local variable
+C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(41,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(49,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   King's Treasure.vcxproj -> C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\x64\Debug\King's Treasure.exe
