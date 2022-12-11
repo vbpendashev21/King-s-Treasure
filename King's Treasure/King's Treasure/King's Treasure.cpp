@@ -36,11 +36,8 @@ int main()
 	system("Color 0E");
 	wordGameAuto();
 
-	for (int i = 0; i < 6; i++)
-	{
-		srand(time(0));
-		randomNumberPassword[i] = (rand() % 9) + 1;
-	}
+	system("Color 06");
+	chestPasswordGame();
 
 	screenClear(0); //clears the sreen
 }

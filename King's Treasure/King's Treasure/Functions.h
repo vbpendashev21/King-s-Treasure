@@ -347,13 +347,41 @@ void wordGameAuto()
 	}
 }
 
-int randomNumbersPassword()
+int passwordSort(int password[6])
 {
-	int randomNumberPassword[6];
+	int temp = 0;
 	for (int i = 0; i < 6; i++)
 	{
-		srand(time(0));
-		randomNumberPassword[i] = (rand() % 9) + 1;
-		return randomNumberPassword[i];
+		for (int j = i + 1; j < 6; j++)
+		{
+			password[j] = temp;
+		}
 	}
+	return 0;
+}
+
+int randomNumberGameMode()
+{
+	int randomNumberGameMode = 0;
+	srand(time(0));
+	randomNumberGameMode = (rand() % 2) + 1;
+	return randomNumberGameMode;
+}
+
+int randomNumbersPassword()
+{
+	int randomNumberPassword = 0;
+	srand(time(0));
+	randomNumberPassword = (rand() % 9) + 1;
+	return randomNumberPassword;
+}
+
+void chestPasswordGame()
+{
+	int password[6], gameMode = 0;
+	for (int i = 0; i < 6; i++)
+	{
+		password[i] = randomNumbersPassword();
+	}
+	gameMode = randomNumberGameMode();
 }
