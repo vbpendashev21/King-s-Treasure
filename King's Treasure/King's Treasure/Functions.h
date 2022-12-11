@@ -15,9 +15,22 @@ void screenClear(int input)
 	}
 }
 
-string wordChoice(int tempNumber)
+string wordQuestionNumber(int questionNumber)
 {
-	switch (tempNumber)
+	switch (questionNumber)
+	{
+		case 1: return "First Word's Definition: "; break;
+		case 2: return "Second Word's Definition: "; break;
+		case 3: return "Third Word's Definition: "; break;
+		case 4: return "Fourth Word's Definition: "; break;
+		case 5: return "Fifth Word's Definition: "; break;
+		case 6: return "Sixth Word's Definition: "; break;
+	}
+}
+
+string wordChoice(int wordNumber)
+{
+	switch (wordNumber)
 	{
 		case 1: return "Potato"; break;
 		case 2: return "Carrot"; break;
@@ -93,9 +106,9 @@ string wordChoice(int tempNumber)
 	return 0;
 }
 
-string wordDefinition(int tempNumber)
+string wordDefinition(int wordNumber)
 {
-	switch (tempNumber)
+	switch (wordNumber)
 	{
 	case 1: return "Potato"; break;
 	case 2: return "Carrot"; break;

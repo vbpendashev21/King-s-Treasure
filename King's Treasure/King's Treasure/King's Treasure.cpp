@@ -9,10 +9,11 @@ using namespace std;
 
 int main()
 {
-	int randomNumber = 0, wordSize = 0;
+	int randomNumber = 0, wordSize = 0, wordSizeCheck = 0, questionCounter = 1, answerCounter = 0;
 	char wordTextCheck[20];
-	string word;
-	bool wordCheck = false, wordCheckArray = true, checkWordGame = false;
+	string word, answerKeep[6];
+	bool wordCheck = false, wordCheckArray = true, checkWordGame = false, answerKeepCheck[6];
+
 	cout << "     "  << "__________________________" << setw(3) << ' ' << "__________________________" << setw(5) << ' ' << "__________________________" << setw(5) << ' ' << "__________________________" << setw(3) << ' ' << "__________________________" << setw(5) << ' ' << "__________________________" << setw(3) << ' ' << "_________________" << setw(3) << ' ' << "__________________________";
 	cout << endl << "     " << '|' << setw(25) << '|' << setw(4) << '|';
 	
@@ -34,44 +35,145 @@ int main()
 	cout << endl << setw(414) << "|___________________________________________________________________________________________________________________________|";
 	
 	screenClear(0); //clears the screen
-
-	cout << endl << setw(364) << "Guess If You Can!";
-	cout << endl << setw(350) << "First Word's Definition: ";
 	
 	srand(time(0));
 	randomNumber = 1 + (rand() % 70);
 	word = wordChoice(randomNumber);
-	cout << wordDefinition(randomNumber);
-	cout << endl << setw(350) << "Answer: ";
+	wordSizeCheck = word.size();
+	answerKeep[0] = word;
+	
 	do
 	{
+		cout << endl << setw(364) << "Guess If You Can!";
+		for (int i = 0; i < questionCounter; i++)
+		{
+			if (questionCounter >= 2)
+			{
+				cout << endl << "| ";
+				for (int i = 0; i < 300; i++)
+				{
+					cout << '_';
+				}
+				cout << " |";
+				cout << endl << setw(350) << wordQuestionNumber(questionCounter);
+				cout << wordDefinition(randomNumber);
+				if (answerKeepCheck[i])
+				{
+					cout << endl << setw(350) << answerKeep[i];
+				}
+				else
+				{
+					cout << endl << setw(350) << "Answer: ";
+				}
+			}
+			else
+			{
+				cout << endl << setw(350) << wordQuestionNumber(questionCounter);
+				cout << wordDefinition(randomNumber);
+				cout << endl << setw(350) << "Answer: ";
+			}
+
+		}
+		
 		cin.getline(wordTextCheck, 100);
 		wordSize = strlen(wordTextCheck);
-		switch (wordSize)
+		for (int i = 0; i < wordSize; i++)
 		{
-		case 3: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 4: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 5: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3]) && (wordTextCheck[4] == word[4])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 6: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3]) && (wordTextCheck[4] == word[4]) && (wordTextCheck[5] == word[5])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 7: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3]) && (wordTextCheck[4] == word[4]) && (wordTextCheck[5] == word[5]) && (wordTextCheck[6] == word[6])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 8: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3]) && (wordTextCheck[4] == word[4]) && (wordTextCheck[5] == word[5]) && (wordTextCheck[6] == word[6]) && (wordTextCheck[7] == word[7])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 9: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3]) && (wordTextCheck[4] == word[4]) && (wordTextCheck[5] == word[5]) && (wordTextCheck[6] == word[6]) && (wordTextCheck[7] == word[7]) && (wordTextCheck[8] == word[8])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 10: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3]) && (wordTextCheck[4] == word[4]) && (wordTextCheck[5] == word[5]) && (wordTextCheck[6] == word[6]) && (wordTextCheck[7] == word[7]) && (wordTextCheck[8] == word[8]) && (wordTextCheck[9] == word[9])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 11: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3]) && (wordTextCheck[4] == word[4]) && (wordTextCheck[5] == word[5]) && (wordTextCheck[6] == word[6]) && (wordTextCheck[7] == word[7]) && (wordTextCheck[8] == word[8]) && (wordTextCheck[9] == word[9]) && (wordTextCheck[10] == word[10])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		case 12: if ((wordTextCheck[0] == word[0]) && (wordTextCheck[1] == word[1]) && (wordTextCheck[2] == word[2]) && (wordTextCheck[3] == word[3]) && (wordTextCheck[4] == word[4]) && (wordTextCheck[5] == word[5]) && (wordTextCheck[6] == word[6]) && (wordTextCheck[7] == word[7]) && (wordTextCheck[8] == word[8]) && (wordTextCheck[9] == word[9]) && (wordTextCheck[10] == word[10]) && (wordTextCheck[11] == word[11])) { wordCheck = true; } else { wordCheckArray = false; }; break;
-		}
-		/*for (int i = wordSize - 1; i >= 0; i--)
-		{
-			if (wordTextCheck[i] % 10 != word[i])
+			if (wordSize > wordSizeCheck || wordSize < wordSizeCheck)
 			{
 				wordCheckArray = false;
 				break;
 			}
-		}*/
+			else if (wordTextCheck[i] != word[i])
+			{
+				wordCheckArray = false;
+			}
+		}
+		if (wordSize == 0)
+		{
+			wordCheckArray = false;
+		}
 		if (wordCheckArray)
 		{
 			wordCheck = true;
+			answerKeepCheck[answerCounter] = true;
+		}
+		else
+		{
+			wordCheckArray = true;
+			system("cls");
 		}
 	} while (wordCheck != true);
+	answerCounter++;
+	system("cls");
 
+	srand(time(0));
+	randomNumber = 1 + (rand() % 70);
+	word = wordChoice(randomNumber);
+	wordSizeCheck = word.size();
+	answerKeep[1] = word;
+
+	do
+	{
+		cout << endl << setw(364) << "Guess If You Can!";
+		for (int i = 0; i < questionCounter; i++)
+		{
+			if (questionCounter >= 2)
+			{
+				cout << endl << "| ";
+				for (int i = 0; i < 100; i++)
+				{
+					cout << '_';
+				}
+				cout << " |";
+				cout << endl << setw(350) << wordQuestionNumber(questionCounter);
+				cout << wordDefinition(randomNumber);
+				if (answerKeepCheck[i])
+				{
+					cout << endl << setw(350) << answerKeep[i];
+				}
+				else
+				{
+					cout << endl << setw(350) << "Answer: ";
+				}
+			}
+			else
+			{
+				cout << endl << setw(350) << wordQuestionNumber(questionCounter);
+				cout << wordDefinition(randomNumber);
+				cout << endl << setw(350) << "Answer: ";
+			}
+
+		}
+
+		cin.getline(wordTextCheck, 100);
+		wordSize = strlen(wordTextCheck);
+		for (int i = 0; i < wordSize; i++)
+		{
+			if (wordSize > wordSizeCheck || wordSize < wordSizeCheck)
+			{
+				wordCheckArray = false;
+				break;
+			}
+			else if (wordTextCheck[i] != word[i])
+			{
+				wordCheckArray = false;
+			}
+		}
+		if (wordSize == 0)
+		{
+			wordCheckArray = false;
+		}
+		if (wordCheckArray)
+		{
+			wordCheck = true;
+			answerKeepCheck[answerCounter] = true;
+		}
+		else
+		{
+			wordCheckArray = true;
+			system("cls");
+		}
+	} while (wordCheck != true);
+	answerCounter++;
 }
