@@ -1,2 +1,9 @@
 ﻿  King's Treasure.cpp
+C:\Users\Steli\OneDrive\Работен плот\project\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(90,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Steli\OneDrive\Работен плот\project\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(93,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Steli\OneDrive\Работен плот\project\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(130,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Steli\OneDrive\Работен плот\project\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(161,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Steli\OneDrive\Работен плот\project\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(164,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Steli\OneDrive\Работен плот\project\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(201,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Steli\OneDrive\Работен плот\project\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(29): warning C4715: 'wordQuestionNumber': not all control paths return a value
   King's Treasure.vcxproj -> C:\Users\Steli\OneDrive\Работен плот\project\King-s-Treasure\King's Treasure\x64\Debug\King's Treasure.exe
