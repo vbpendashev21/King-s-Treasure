@@ -5,6 +5,7 @@ using namespace std;
 
 void gameNamePrint()
 {
+	system("Color 0E");
 	cout << setw(25) << ' ' << "_______" << setw(12) << ' ' << "_______" << setw(10) << ' ' << "___________________________" << setw(10) << ' ' << "_______" << setw(12) << ' ' << "_______" << setw(10) << ' ' << "___________________________";
 	cout << endl << setw(25) << ' ' << '|' << setw(5) << ' ' << '|' << setw(11) << ' ' << '/' << setw(7) << '/' << setw(10) << ' ' << '|' << setw(25) << ' ' << '|' << setw(10) << ' ' << '|' << setw(5) << ' ' << '|' << setw(12) << ' ' << '|' << setw(5) << ' ' << '|' << setw(10) << ' ' << '|' << setw(25) << ' ' << '|' << setw(10) << ' ' << "_______";
 	cout << endl << setw(25) << ' ' << '|' << setw(5) << ' ' << '|' << setw(10) << ' ' << '/' << setw(7) << '/' << setw(11) << ' ' << "|_________       _________|" << setw(10) << ' ' << '|' << setw(5) << ' ' << '|' << setw(12) << ' ' << '|' << setw(5) << ' ' << '|' << setw(10) << ' ' << "|     ____________________|" << setw(10) << ' ' << '|' << setw(5) << ' ' << '|';
@@ -49,6 +50,25 @@ void gameNamePrint()
 	cout << endl << ' ' << setw(12) << ' ' << '|' << setw(17) << ' ' << '|' << setw(22) << ' ' << '\\' << setw(6) << '|' << setw(31) << ' ' << '/' << setw(22) << ' ' << '\\' << setw(31) << ' ' << '|' << setw(5) << ' ' << '|' << setw(23) << ' ' << '|' << setw(5) << ' ' << '|' << setw(22) << ' ' << '\\' << setw(6) << '|';
 	cout << endl << ' ' << setw(12) << ' ' << '|' << setw(17) << ' ' << '|' << setw(23) << ' ' << '\\' << setw(4) << ' ' << "|________________________" << setw(6) << ' ' << '/' << setw(24) << ' ' << '\\' << setw(5) << ' ' << "_________________________/" << setw(5) << ' ' << "\\_______________________/" << setw(5) << ' ' << '|' << setw(23) << ' ' << '\\' << setw(4) << ' ' << "|_______________________";
 	cout << endl << endl;
+}
+
+void gameInstructionsPrint()
+{
+	system("Color 0C");
+	cout << endl << setw(371) << "________________________________";
+	cout << endl << setw(371) << "| Instructions BEFORE YOU PLAY |";
+	cout << endl << setw(371) << "|______________________________|";
+	cout << endl << setw(414) << "_____________________________________________________________________________________________________________________________";
+	cout << endl << setw(290) << '|' << setw(90) << "+ ALWAYS type the first letter of the words in CAPITAL" << setw(34) << '|';
+	cout << endl << setw(290) << '|' << setw(65) << '|' << setw(59) << '|';
+	cout << endl << setw(290) << '|' << setw(75) << "+ When you press the \"H\" button on the keyboard you will be given a hint ";
+	cout << "which will reveal the first letter of the word" << setw(3) << '|';
+	cout << endl << setw(290) << '|' << setw(65) << '|' << setw(59) << '|';
+	cout << endl << setw(290) << '|' << setw(105) << "+ After you guess all the words you will be given 6 random numbers (from 1 to 9)" << setw(19) << '|';
+	cout << endl << setw(290) << '|' << setw(65) << '|' << setw(59) << '|';
+	cout << endl << setw(290) << '|' << setw(107) << "+ When you guess all the words you will be given the option to go to the next stage " << setw(17) << '|';
+	cout << endl << setw(290) << '|' << setw(95) << "where you will have to use the numbers to guess a password" << setw(29) << '|';
+	cout << endl << setw(414) << "|___________________________________________________________________________________________________________________________|";
 }
 
 void screenClear(int input)
@@ -322,6 +342,7 @@ void wordGameAuto()
 	char wordTextCheck[20];
 	string word, answerKeep[6];
 	bool wordCheck = false, wordCheckArray = true, answerKeepCheck[6];
+	system("Color 0E");
 	for (int i = 0; i < 6; i++)
 	{
 		srand(time(0));
@@ -347,14 +368,49 @@ void wordGameAuto()
 	}
 }
 
-int passwordSort(int password[6])
+int password[6];
+
+void passwordGameGraphic() // make the graphic SGMikov21; change the function type from string to void
+{
+	for (int i = 0; i < 6; i++)
+	{
+		cout << password[i] << ' ';
+	}
+	cout << endl;
+	cout << "Enter password: "; // temporary usage/code
+}
+
+int passwordSortFirstGameMode()
 {
 	int temp = 0;
 	for (int i = 0; i < 6; i++)
 	{
-		for (int j = i + 1; j < 6; j++)
+		for (int j = 0; j < 5; j++)
 		{
-			password[j] = temp;
+			if (password[j] > password[j + 1])
+			{
+				temp = password[j];
+				password[j] = password[j + 1];
+				password[j + 1] = temp;
+			}
+		}
+	}
+	return 0;
+}
+
+int passwordSortSecondGameMode()
+{
+	int temp = 0;
+	for (int i = 0; i < 6; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (password[j] < password[j + 1])
+			{
+				temp = password[j];
+				password[j] = password[j + 1];
+				password[j + 1] = temp;
+			}
 		}
 	}
 	return 0;
@@ -376,12 +432,61 @@ int randomNumbersPassword()
 	return randomNumberPassword;
 }
 
-void chestPasswordGame()
+void passwordGame()
 {
-	int password[6], gameMode = 0;
+	int passwordUserInput, passwordSizeCheck = 0, counter = 0, userInputDowngrader = 10;
+	bool passwordCheck = true;
+
+	passwordGameGraphic();
+	
+	cin >> passwordUserInput;
+	do
+	{
+		passwordSizeCheck /= 10;
+		counter++;
+	} while (passwordSizeCheck != 0);
+	passwordSizeCheck = counter;
+
+	if (passwordSizeCheck > 6 || passwordSizeCheck < 6)
+	{
+		system("cls");
+		passwordGame();
+	}
+
+	for (int i = counter - 1; i >= 0; i--)
+	{
+		if (passwordUserInput % userInputDowngrader != password[i])
+		{
+			passwordCheck = false;
+		}
+		userInputDowngrader++;
+	}
+	
+	if (!passwordCheck)
+	{
+		system("cls");
+		passwordGame();
+	}
+	else
+	{
+		system("cls");
+		cout << "Congrats!";
+	}
+}
+
+void passwordGameAuto()
+{
+	int gameMode = 0;
+	system("Color 0E");
 	for (int i = 0; i < 6; i++)
 	{
 		password[i] = randomNumbersPassword();
 	}
 	gameMode = randomNumberGameMode();
+	switch (gameMode)
+	{
+	case 1: passwordSortFirstGameMode; break;
+	case 2: passwordSortSecondGameMode; break;
+	}
+	passwordGame();
 }
