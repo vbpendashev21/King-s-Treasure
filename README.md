@@ -26,4 +26,4 @@ And this is our first project.
 
 ## Authors
 
-- [@octokatherine](https://github.com/SGMikov21)
+- [@SGMikov21](https://github.com/SGMikov21)
