@@ -5,7 +5,7 @@
 ## 🎮 About the Game
 
 You have to guess 6 words from a given description.
-Each word you guess will give you a number.
+After you guess all the words you will be given 6 random numbers.
 In the second part of the game you will have to put them in the described order.
 
 ## Used Languages
