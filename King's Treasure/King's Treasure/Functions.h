@@ -346,7 +346,7 @@ void wordGameAuto()
 	for (int i = 0; i < 6; i++)
 	{
 		srand(time(0));
-		randomNumber[i] = 1 + (rand() % 70);
+		randomNumber[i] = (rand() % 70) + 1;
 		word = wordChoice(randomNumber[i]);
 		wordSizeCheck = word.size();
 		answerKeep[i] = word;
