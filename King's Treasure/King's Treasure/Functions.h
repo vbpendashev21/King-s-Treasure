@@ -497,7 +497,7 @@ void passwordGame()
 		passwordGame();
 	}
 
-	if (passwordSizeCheck > 6 || passwordSizeCheck < 6)
+	if (passwordSizeCheck != 6)
 	{
 		system("cls");
 		passwordGame();
