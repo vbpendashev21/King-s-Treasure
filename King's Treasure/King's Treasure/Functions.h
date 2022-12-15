@@ -89,12 +89,12 @@ string wordQuestionNumber(int questionNumber)
 {
 	switch (questionNumber)
 	{
-		case 0: return "First Word's Definition: "; break;
-		case 1: return "Second Word's Definition: "; break;
-		case 2: return "Third Word's Definition: "; break;
-		case 3: return "Fourth Word's Definition: "; break;
-		case 4: return "Fifth Word's Definition: "; break;
-		case 5: return "Sixth Word's Definition: "; break;
+		case 0: return "First Word's Definition:"; break;
+		case 1: return "Second Word's Definition:"; break;
+		case 2: return "Third Word's Definition:"; break;
+		case 3: return "Fourth Word's Definition:"; break;
+		case 4: return "Fifth Word's Definition:"; break;
+		case 5: return "Sixth Word's Definition:"; break;
 	}
 }
 
@@ -201,7 +201,7 @@ string wordDefinition(int wordNumber)
 		case 19: return "A type of bird kept on a farm for its eggs or its meat."; break;
 		case 20: return "The flesh of cows, eaten as food."; break;
 		case 21: return "A belief, principle, or way of acting that people in a particular society or group have continued to follow for a long time."; break;
-		case 22: return "Formal acts, often fixed and traditional, performed on important social or religious occasions"; break;
+		case 22: return "Formal acts, often fixed and traditional, performed on important social or religious occasions."; break;
 		case 23: return "A device with a part to cover each ear through which you can listen to music"; break;
 		case 24: return "A device that is used to call people, play games, chat, etc."; break;
 		case 25: return "A system of broadcasting images and sound using electrical signals, and the programmes that are shown."; break;
@@ -238,7 +238,7 @@ string wordDefinition(int wordNumber)
 		case 56: return "The coins or bills with their value on them that are used to buy things."; break;
 		case 57: return "The feeling people get when something unfair, painful, or bad happens."; break;
 		case 58: return "Weighing less than usual."; break;
-		case 59: return "Heavier than is allowed."; break;
+		case 59: return "Weighing more than usual."; break;
 		case 60: return "Above average height or of a certain height."; break;
 		case 61: return "Small in length, distance, or height."; break;
 		case 62: return "Usually rectangular piece of cloth or paper used for drying something."; break;
@@ -258,10 +258,10 @@ void wordGame(int questionCounter, int randomNumber[6], bool answerKeepCheck[6],
 {
 	do
 	{
-		cout << setw(26) << "________________________" << endl << setw(26) << "| Press \"H\" for a hint |" << endl << setw(26) << "|______________________|" << setw(102) << "________________________";
+		cout << setw(128) << "________________________";
 		cout << endl << setw(365) << "| Guess It If You Can! |";
-		cout << endl << setw(46);
-		for (int i = 0; i < 136; i++)
+		cout << endl << setw(40);
+		for (int i = 0; i < 145; i++)
 		{
 			cout << '_';
 		}
@@ -278,22 +278,26 @@ void wordGame(int questionCounter, int randomNumber[6], bool answerKeepCheck[6],
 					}
 					cout << " |";
 				}
-				cout << endl << setw(329) << wordQuestionNumber(i);
-				cout << wordDefinition(randomNumber[i]);
+				cout.width(78);
+				cout << endl << endl << wordQuestionNumber(i);
+				cout.width(410);
+				cout << endl << wordDefinition(randomNumber[i]);
 				if (answerKeepCheck[i] == 1)
 				{
-					cout << endl << setw(357) << "Answer: " << answerKeep[i];
+					cout << endl << setw(380) << "Answer: " << answerKeep[i];
 				}
 				else
 				{
-					cout << endl << setw(357) << "Answer: ";
+					cout << endl << setw(380) << "Answer: ";
 				}
 			}
 			else
 			{
-				cout << endl << setw(329) << wordQuestionNumber(i);
-				cout << wordDefinition(randomNumber[i]);
-				cout << endl << setw(357) << "Answer: ";
+				cout.width(78);
+				cout << endl << endl << wordQuestionNumber(i);
+				cout.width(410);
+				cout << endl << wordDefinition(randomNumber[i]);
+				cout << endl << setw(380) << "Answer: ";
 			}
 
 		}
@@ -318,8 +322,8 @@ void wordGame(int questionCounter, int randomNumber[6], bool answerKeepCheck[6],
 		}
 		if (questionCounter == 6)
 		{
-			cout << setw(46);
-			for (int i = 0; i < 136; i++)
+			cout << setw(40);
+			for (int i = 0; i < 145; i++)
 			{
 				cout << '_';
 			}
@@ -369,16 +373,56 @@ void wordGameAuto()
 	}
 }
 
-int passwordKeep[6], password[6];
+long long int passwordUserInput = 0;
+int password[6], passwordKeep[6], gameMode = 0;
+bool passwordCheck = false;
 
-void passwordGameGraphic() // make the graphic SGMikov21; change the function type from string to void
+void passwordGameWin()
 {
-	for (int i = 0; i < 6; i++)
+	cout << endl << "                          /------------\\										  ____________________________________________________________________";                                                                
+	cout << endl << "         _________________|____________|___________________					  |	 						Congratulations!						 |";
+	cout << endl << "        /|                                               /_|					  |		 You have passed through all of the King's challenges!       |";
+	cout << endl << "      /  |                                              /__/					  |									|								 |";
+	cout << endl << "    /____|_____________________________________________/___/					  |									|								 |";
+	cout << endl << "  / |                                                ///\\/					  |  			You may now get your reward and go away				 |";
+	cout << endl << "/___|______________________________________________ / // |						  | because, trust me, you don't want to deal with the King's Son... |";
+	cout << endl << "|__________________________________________________|// /|						  |			 But who knows maybe one day you will meet him...		 |";
+	cout << endl << "|__________________________________________________|/ //|						  |									|								 |";
+	cout << endl << "|                                                  | // |						  |								---------							 |";
+	cout << endl << "|__________________________________________________|// /|						  |									|								 |";
+	cout << endl << "|__________________________________________________|/ //|						  |									|								 |";
+	cout << endl << "|                 King's Treasure                  | // |						  |	---------------------------------------------------------------- |";
+	cout << endl << "|__________________________________________________|// /|						  |									|								 |";
+	cout << endl << "|__________________________________________________|/ //|						  |									|								 |";
+	cout << endl << "|                                                  | // |						  |			  Game Concept Developed by: Aleksandar Popov			 |";
+	cout << endl << "|__________________________________________________|// /|						  |		   Game Developers: Aleksandar Popov, Stelian Mikov			 |";
+	cout << endl << "|__________________________________________________|/ //						  |						  QA: Teodora Lozeva						 |";
+	cout << endl << "|                                                  | //						  |					  PPP&DOC: Valentin Pendashev					 |";
+	cout << endl << "|__________________________________________________|//							  |									|								 |";
+	cout << endl << "|__________________________________________________|/							  \\________________________________________________________________/";
+}
+
+void passwordGameGraphicPart2();
+
+void passwordGameGraphicPart1()
+{
+	if (gameMode == 1)
 	{
-		cout << password[i] << ' ';
+		cout << "Put the numbers in a logical way from the smallest to the biggest: ";
+		for (int i = 0; i < 6; i++)
+		{
+			cout << passwordKeep[i] << ' ';
+		}
 	}
-	cout << endl;
-	cout << "Enter password: "; // temporary usage/code
+	else
+	{
+		cout << "Put the numbers in a logical way from the biggest to the smallest: ";
+		for (int i = 0; i < 6; i++)
+		{
+			cout << passwordKeep[i] << ' ';
+		}
+	}
+	cout << endl << "Enter The Number: ";
 }
 
 int passwordSortFirstGameMode()
@@ -435,10 +479,10 @@ void passwordGame()
 {
 	long long int passwordUserInput, passwordSizeCheck = 0;
 	int counter = 0, userInputDowngrader = 10;
-	bool passwordCheck = true;
 
-	passwordGameGraphic();
-	
+	passwordGameGraphicPart1();
+
+	passwordCheck = true;
 	cin >> passwordUserInput;
 	passwordSizeCheck = passwordUserInput;
 	do
@@ -447,6 +491,11 @@ void passwordGame()
 		counter++;
 	} while (passwordSizeCheck != 0);
 	passwordSizeCheck = counter;
+
+	if (passwordSizeCheck == 0)
+	{
+		passwordGame();
+	}
 
 	if (passwordSizeCheck > 6 || passwordSizeCheck < 6)
 	{
@@ -460,7 +509,7 @@ void passwordGame()
 		{
 			passwordCheck = false;
 		}
-		userInputDowngrader++;
+		userInputDowngrader *= 10;
 	}
 	
 	if (!passwordCheck)
@@ -471,18 +520,20 @@ void passwordGame()
 	else
 	{
 		system("cls");
-		cout << "Congrats!";
+		passwordCheck = true;
+		passwordGameGraphicPart2();
 	}
 }
 
 void passwordGameAuto()
 {
-	int gameMode = 0;
+	gameMode = 0;
 	system("Color 0E");
 	srand(time(0));
 	for (int i = 0; i < 6; i++)
 	{
-		password[i] = randomNumbersPassword();
+		passwordKeep[i] = randomNumbersPassword();
+		password[i] = passwordKeep[i];
 	}
 	gameMode = randomNumberGameMode();
 	switch (gameMode)
@@ -491,4 +542,35 @@ void passwordGameAuto()
 	case 2: passwordSortSecondGameMode; break;
 	}
 	passwordGame();
+}
+
+void passwordGameGraphicPart2()
+{
+	cout << endl << "      __________________________________________________";
+	cout << endl << "    /________________________________________________/ /|";
+	cout << endl << "  /_________________________________________________/ //|";
+	cout << endl << "/____________________/________\\____________________/ // |";
+	cout << endl << "|____________________|________|____________________|// /|";
+	cout << endl << "|_______________/__________________\\_______________|/ //|";
+	cout << endl << "|               |      " << passwordUserInput << "      |               | // |";
+	cout << endl << "|_______________\\__________________/_______________|// /|";
+	cout << endl << "|__________________________________________________|/ //|";
+	cout << endl << "|                 King's Treasure                  | // |";
+	cout << endl << "|__________________________________________________|// /|";
+	cout << endl << "|__________________________________________________|/ //|";
+	cout << endl << "|                                                  | // |";
+	cout << endl << "|__________________________________________________|// /|";
+	cout << endl << "|__________________________________________________|/ //";
+	cout << endl << "|                                                  | //";
+	cout << endl << "|__________________________________________________|//";
+	cout << endl << "|__________________________________________________|/";
+	screenClear(0);
+	if (!passwordCheck)
+	{
+		passwordGame();
+	}
+	else
+	{
+		passwordGameWin();
+	}
 }
