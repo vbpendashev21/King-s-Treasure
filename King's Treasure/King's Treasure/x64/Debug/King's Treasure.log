@@ -1,11 +1,1 @@
-﻿  King's Treasure.cpp
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(306,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(353,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(356,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(346,6): warning C4101: 'randomNumberPassword': unreferenced local variable
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(532,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(541,10): warning C4551: function call missing argument list
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(542,10): warning C4551: function call missing argument list
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\King's Treasure.cpp(11,6): warning C4101: 'randomNumberPassword': unreferenced local variable
-C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\King's Treasure\Functions.h(99): warning C4715: 'wordQuestionNumber': not all control paths return a value
-  King's Treasure.vcxproj -> C:\Users\Aleksandar\Desktop\King-s-Treasure\King's Treasure\x64\Debug\King's Treasure.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(439,5): error MSB8020: The build tools for v143 (Platform Toolset = 'v143') cannot be found. To build using the v143 build tools, please install v143 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
